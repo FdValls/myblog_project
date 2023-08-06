@@ -1,10 +1,14 @@
 import "./App.css";
+import Card from "./components/Card";
+
 
 function App() {
   return (
-    <>
-      <h2>Hello Word</h2>
-    </>
+    <div>
+      <header>
+        <Card />
+      </header>
+    </div>
   );
 }
 
