@@ -1,11 +1,15 @@
 import "./App.css";
 import Card from "./components/Card";
+import { useState } from "react";
+import RouterMain from "./routes/RouterMain";
 
 function App() {
+  const [autenticado, setAutenticado] = useState(false);
+
   return (
-    <div>
+    <div className="App">
       <header>
-        <Card />
+        <RouterMain />
       </header>
     </div>
   );
