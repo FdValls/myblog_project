@@ -6,6 +6,7 @@ import {
   NavLink,
   Router,
 } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 
 import Home from "../views/Home";
 import Error404 from "../views/Error404";
@@ -22,21 +23,21 @@ function RouterMain(props) {
   const { prueba } = props;
   const { lista } = props;
   const { setLista } = props;
-  const seAutentico = true;
+  // const isAuthenticate = false;
+  const [isAuthenticate, setIsAuthenticate] = useState(false);
 
   return (
     <>
       <BrowserRouter>
-        {!seAutentico ? (
-          <SignIn />
+        {!isAuthenticate ? (
+          <SignIn authenticate={isAuthenticate} setIsAuthenticate={setIsAuthenticate} />
         ) : (
           <>
             <div>
-              <LabelBottomNavigation />
+              <LabelBottomNavigation setIsAuthenticate={setIsAuthenticate} />
             </div>
 
             <Routes>
-              <Route path="/login" element={<SignIn />} />
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
               <Route
