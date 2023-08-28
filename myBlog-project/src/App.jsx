@@ -13,7 +13,12 @@ function App() {
   return (
     <div className="App">
       <header>
-        <RouterMain autenticado={autenticado} prueba={prueba} lista={arrayPost} setLista={setArrayPost}/>
+          <RouterMain
+            autenticado={autenticado}
+            prueba={prueba}
+            lista={arrayPost}
+            setLista={setArrayPost}
+          />
       </header>
     </div>
   );

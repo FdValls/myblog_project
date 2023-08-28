@@ -10,11 +10,9 @@ import {
 import Home from "../views/Home";
 import Error404 from "../views/Error404";
 import NoAutorizado from "../views/NoAutorizado";
-import RouterPost from "./RouterPost";
 import Card from "../components/Card";
 import LabelBottomNavigation from "../components/Menu/BottomNavigation.jsx";
 import Crear from "../components/Crear";
-import PosteoId from "../components/PosteoId";
 import PosteoDescripcion from "../components/PosteoDescripcion";
 import SignIn from "../components/SignIn";
 import CardForm from "../components/CardForm";
@@ -24,6 +22,7 @@ function RouterMain(props) {
   const { prueba } = props;
   const { lista } = props;
   const { setLista } = props;
+  const seAutentico = true;
 
   return (
     <>
@@ -32,11 +31,9 @@ function RouterMain(props) {
           <LabelBottomNavigation />
         </div>
 
+        {/* {!seAutentico ? <SignIn/> : <div> No tenes acceso.... </div>} */}
+
         <Routes>
-          <Route
-            path="/login"
-            element={autenticado ? <SignIn /> : <NoAutorizado />}
-          />
           <Route path="/login" element={<SignIn />} />
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
