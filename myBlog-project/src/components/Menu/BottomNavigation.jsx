@@ -1,11 +1,9 @@
 import * as React from "react";
 import { BottomNavigation, BottomNavigationAction } from "@mui/material";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { useLocation, Link, useNavigate } from "react-router-dom";
-import home from "../../images/home.png"; // Importa la imagen del icono
-import post from "../../images/post.png"; // Importa la imagen del icono
-import create from "../../images/create.png"; // Importa la imagen del icono
+import home from "../../images/home.png"; 
+import post from "../../images/post.png";
+import create from "../../images/create.png"; 
 import style from "./style.js";
 import labelColor from "./BottomNavStyles.css";
 

@@ -6,10 +6,10 @@ function Crear(props) {
   const [name, setName] = useState("");
   const [text, setText] = useState("");
   const [nameUser, setNameUser] = useState("");
-  const [post, setPost] = useState(myPosts)
+  const [post, setPost] = useState(myPosts);
   const [isNotEmpty, setIsNotEmpty] = useState(false);
   const [isEmpty, setIsEmpty] = useState(false);
-  const { nombre } = props
+  const { nombre } = props;
 
   const handleTextChange = (event) => {
     setText(event.target.value);
@@ -25,20 +25,19 @@ function Crear(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(text)
-    console.log(name)
-    console.log(nameUser)
-    console.log(nombre)
+    console.log(text);
+    console.log(name);
+    console.log(nameUser);
+    console.log(nombre);
 
     const newPost = {
-      "id": 666,
-      "titulo": "Fernando Valls ",
-      "texto": "Test",  
-      "user_id": 666,
-      "usuario": "Gon"
+      id: 666,
+      titulo: "Fernando Valls ",
+      texto: "Test",
+      user_id: 666,
+      usuario: "Gon",
     };
-    setPost([...post, newPost])
-
+    setPost([...post, newPost]);
   };
 
   const toggleIsNotEmpty = (e) => {
@@ -51,17 +50,16 @@ function Crear(props) {
   };
 
   return (
-    
     <div
-    style={{
+      style={{
         display: "flex",
         flexDirection: "column",
         textAlign: "initial",
         margin: "15px",
       }}
     >
-      <h2 style={{ color: "white" }}>Componente de contacto</h2>
       <form onSubmit={handleSubmit} style={{ textAlign: "center" }}>
+      <h1 style={{ color: "black", alignItems: "center", fontSize: "50px"}}>Creacion de post</h1>
         <div style={{ margin: "15px", textAlign: "initial" }}>
           <label htmlFor="name">Titulo: </label>
           <input
@@ -99,15 +97,20 @@ function Crear(props) {
             onChange={handleNameUserChange}
           />
         </div>
-        <button
-          style={{ backgroundColor: "green" }}
-          type="submit"
-          onClick={toggleIsNotEmpty}
-        >
-          Enviar
-        </button>
+        <div>
+          <button
+            style={{ backgroundColor: "black" }}
+            type="submit"
+            onClick={toggleIsNotEmpty}
+          >
+            Enviar
+          </button>
+        </div>
       </form>
-      <Link to="/" style={{ textAlign: "center", marginTop: "15px" }}>
+      <Link
+        to="/"
+        style={{ textAlign: "center", marginTop: "15px", color: "black" }}
+      >
         Volver al inicio
       </Link>
       <div style={{ textAlign: "center", marginTop: "15px" }}>

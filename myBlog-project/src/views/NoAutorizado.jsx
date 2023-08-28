@@ -5,7 +5,7 @@ const NotFound = () => {
   return (
     <div>
       <h1>
-        <Cartel content="🚧 404 Página no encontrada 🙁" />
+        <Cartel content="🚧 403 No Autorizado!! 🙁" />
       </h1>
       <div>
         <NavLink style={{color: "black"}} to="/">Volver al inicio</NavLink>

@@ -1,64 +1,61 @@
 import React, { useState } from "react";
-import myPosts from "../utils/MyArray";
 import "../css/style.css";
 import {
-  useParams,
-  NavLink,
-  Outlet,
   useNavigate,
-  Link
+  Link,
 } from "react-router-dom";
 
-import MyArray from "../utils/MyArray";
-
-
-const Card =(props)=>{
-  const { id = "no-encontrado" } = useParams();
+const Card = (props) => {
   const navigate = useNavigate();
-  const {param} = props
-
-  const misPosts = MyArray();
+  const { lista } = props;
 
   function handerInfo(txt, index) {
     alert(txt + index);
-    if (txt === "LEER posteo ID: ") {
-    }
+    // console.log(lista)
   }
 
   const navigateToPage = (elementId) => {
     navigate(`/posteo/${elementId}`);
-    // navigate(`/`);
   };
 
-
   return (
+    
     <div className="app">
-      <h1 style={{ marginTop: "50px" }}>Lista de Posteos</h1>
+      <h1 style={{ marginTop: "50px", color: "black" }}>Lista de Posteos</h1>
       <div className="card-list">
-        {misPosts.map((element) => (
+        {lista.map((element) => (
           <div key={element.id} className="card">
             <h2>{element.titulo}</h2>
             <p>{element.texto}</p>
-            <button
-              onClick={() => {
-                navigateToPage(element.id);
-              }}
-            >
-              LEER
-            </button>
-            {/* <NavLink to={`/posteo/${element.id}`}>LEER</NavLink> */}
-            <button
-              onClick={() => {
-                handerInfo("MODIFICAR posteo ID: ", element.id);
-              }}
-            >
-              MODIFICAR
-            </button>
+            <div>
+              <button
+                onClick={() => {
+                  navigateToPage(element.id);
+                }}
+              >
+                LEER
+              </button>
+              <button
+                onClick={() => {
+                  handerInfo("MODIFICAR posteo ID: ", element.id);
+                }}
+              >
+                MODIFICAR
+              </button>
+            </div>
           </div>
         ))}
       </div>
+      <div style={{marginTop: "25px" }}>
+        <Link
+          to="/crear"
+          style={{color: "black" }}
+        >
+          Atras
+        </Link>
+      </div>
     </div>
   );
-}
+};
 
-export default Card
+export default Card;

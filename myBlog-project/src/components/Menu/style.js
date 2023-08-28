@@ -8,7 +8,6 @@ const style = {
   flexDirection: "row",
   justifyContent: "end",
   flexwrap: "initial",
-  gap: "100px",
 };
 
 export default style;
