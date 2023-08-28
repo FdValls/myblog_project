@@ -27,24 +27,33 @@ function RouterMain(props) {
   return (
     <>
       <BrowserRouter>
-        <div>
-          <LabelBottomNavigation />
-        </div>
+        {!seAutentico ? (
+          <SignIn />
+        ) : (
+          <>
+            <div>
+              <LabelBottomNavigation />
+            </div>
 
-        {/* {!seAutentico ? <SignIn/> : <div> No tenes acceso.... </div>} */}
+            <Routes>
+              <Route path="/login" element={<SignIn />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Home />} />
+              <Route
+                path="/crear"
+                element={
+                  <CardForm prueba={prueba} lista={lista} setLista={setLista} />
+                }
+              />
+              <Route path="/posteo">
+                <Route index element={<Card lista={lista} />} />
+                <Route path=":id" element={<PosteoDescripcion />} />
+              </Route>
 
-        <Routes>
-          <Route path="/login" element={<SignIn />} />
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/crear" element={<CardForm prueba={prueba} lista={lista} setLista={setLista} />}></Route>
-          <Route path="/posteo">
-            <Route index element={<Card lista={lista}/>} />
-            <Route path=":id" element={<PosteoDescripcion />} />
-          </Route>
-
-          <Route path="*" element={<Error404 />} />
-        </Routes>
+              <Route path="*" element={<Error404 />} />
+            </Routes>
+          </>
+        )}
       </BrowserRouter>
     </>
   );

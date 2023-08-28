@@ -37,7 +37,7 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function SignIn() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -49,6 +49,7 @@ export default function SignIn() {
   };
 
   const navigateToPage = () => {
+    // navigate(`/posteo/${elementId}`);
     navigate(`/posteo`);
   };
 
