@@ -52,7 +52,7 @@ export default function SignIn(props) {
 
   const navigateToPage = () => {
     // navigate(`/posteo/${elementId}`);
-    setIsAuthenticate(true)
+    setIsAuthenticate(true);
     navigate(`/`);
   };
 
@@ -86,11 +86,11 @@ export default function SignIn(props) {
                 margin="normal"
                 required
                 fullWidth
-                id="email"
-                label="Email Address"
                 name="email"
+                label="Email Address"
+                type="email"
+                id="email"
                 autoComplete="email"
-                autoFocus
               />
               <TextField
                 margin="normal"
@@ -102,7 +102,7 @@ export default function SignIn(props) {
                 id="password"
                 autoComplete="current-password"
               />
-              <span style={{color: "black"}}>
+              <span style={{ color: "black" }}>
                 <FormControlLabel
                   control={<Checkbox value="remember" color="primary" />}
                   label="Remember me"
