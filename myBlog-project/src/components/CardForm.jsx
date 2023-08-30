@@ -19,12 +19,11 @@ const CardForm = (props) => {
       usuario: userName,
     };
     setLista([...lista, newPost]);
-    console.log(...lista);
   };
 
-  useEffect(() => {
-    console.log(...lista);
-  }, [lista]);
+  // useEffect(() => {
+  //   console.log(...lista);
+  // }, [lista]);
 
   return (
     <>

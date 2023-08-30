@@ -44,16 +44,11 @@ export default function SignIn(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
-  };
-
-  const navigateToPage = () => {
-    // navigate(`/posteo/${elementId}`);
+    const email = data.get("email");
+    const password = data.get("password");
+    console.log(email, password);
     setIsAuthenticate(true);
-    navigate(`/`);
+    navigate(`/home/${email}`);
   };
 
   return (
@@ -113,9 +108,9 @@ export default function SignIn(props) {
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
-                onClick={() => {
-                  navigateToPage();
-                }}
+                // onClick={() => {
+                //   navigateToPage();
+                // }}
               >
                 Sign In
               </Button>

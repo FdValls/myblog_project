@@ -11,7 +11,6 @@ const Card = (props) => {
 
   function handerInfo(txt, index) {
     alert(txt + index);
-    // console.log(lista)
   }
 
   const navigateToPage = (elementId) => {

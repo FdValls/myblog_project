@@ -19,18 +19,19 @@ import SignIn from "../components/SignIn";
 import CardForm from "../components/CardForm";
 
 function RouterMain(props) {
-  const { autenticado } = props;
   const { prueba } = props;
   const { lista } = props;
   const { setLista } = props;
-  // const isAuthenticate = false;
   const [isAuthenticate, setIsAuthenticate] = useState(false);
 
   return (
     <>
       <BrowserRouter>
         {!isAuthenticate ? (
-          <SignIn authenticate={isAuthenticate} setIsAuthenticate={setIsAuthenticate} />
+          <SignIn
+            authenticate={isAuthenticate}
+            setIsAuthenticate={setIsAuthenticate}
+          />
         ) : (
           <>
             <div>
@@ -40,6 +41,7 @@ function RouterMain(props) {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
+              <Route path="/home/:email" element={<Home />} />
               <Route
                 path="/crear"
                 element={
